@@ -159,11 +159,6 @@ body {
   text-shadow: 0 0 18px rgba(192, 23, 47, 0.18);
 }
 
-.royal-title .bilingual-copy-en,
-.royal-title .bilingual-copy-ur {
-  animation-duration: 13.5s;
-}
-
 .invitation-main-hidden {
   opacity: 0;
 }
