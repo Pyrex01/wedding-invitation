@@ -69,11 +69,24 @@ function App() {
   const invitations = useMemo(() => parseInvitationsCsv(invitationsCsv), []);
   const floatingPetals = useMemo(
     () =>
-      Array.from({ length: 9 }, (_, index) => ({
+      Array.from({ length: 8 }, (_, index) => ({
         id: index,
-        left: `${8 + ((index * 11) % 84)}%`,
-        delay: `${index * 0.55}s`,
-        duration: `${8 + (index % 4) * 1.4}s`
+        left: `${6 + ((index * 11) % 88)}%`,
+        delay: `${index * 0.5}s`,
+        duration: `${9.5 + (index % 4) * 1.4}s`
+      })),
+    []
+  );
+
+  const floatingMotifs = useMemo(
+    () =>
+      Array.from({ length: 10 }, (_, index) => ({
+        id: index,
+        left: `${5 + ((index * 9) % 90)}%`,
+        top: `${10 + ((index * 13) % 76)}%`,
+        delay: `${index * 0.45}s`,
+        duration: `${5.4 + (index % 3) * 1.3}s`,
+        variant: `motif-${index % 4}`
       })),
     []
   );
@@ -141,9 +154,21 @@ function App() {
             style={{ left: petal.left, animationDelay: petal.delay, animationDuration: petal.duration }}
           />
         ))}
+        {floatingMotifs.map((motif) => (
+          <span
+            key={motif.id}
+            className={`mughal-motif ${motif.variant}`}
+            style={{
+              left: motif.left,
+              top: motif.top,
+              animationDelay: motif.delay,
+              animationDuration: motif.duration
+            }}
+          />
+        ))}
       </div>
       <div
-        className={`relative mx-auto flex min-h-screen w-full max-w-[96rem] flex-col overflow-hidden px-5 pb-10 pt-6 sm:my-6 sm:rounded-3xl sm:px-8 sm:shadow-glow lg:px-12 ${
+        className={`relative mx-auto flex min-h-screen w-full max-w-[96rem] flex-col overflow-hidden px-5 pb-10 pt-6 sm:my-6 sm:rounded-3xl sm:px-8 sm:shadow-glow lg:px-12 royal-reveal palace-stage ${
           showIntro ? 'invitation-main-hidden' : 'invitation-main-reveal'
         }`}
       >
@@ -153,9 +178,11 @@ function App() {
         <div className="lantern lantern-right" />
 
         <header
-          className="mughal-arch animate-rise text-center shadow-[0_20px_45px_rgba(18,41,66,0.15)]"
+          className="mughal-arch regal-arch animate-rise text-center shadow-[0_20px_45px_rgba(18,41,66,0.15)]"
           style={{ animationDelay: '100ms' }}
         >
+          <span className="arch-jewel arch-jewel-left" />
+          <span className="arch-jewel arch-jewel-right" />
           <p className="font-body text-[11px] tracking-[0.35em] text-amber-900/80 bilingual-label">
             <span className="bilingual-copy bilingual-copy-en uppercase">Daawat-E-Walima</span>
             <span className="bilingual-copy bilingual-copy-ur urdu-calligraphy" dir="rtl">
@@ -165,29 +192,46 @@ function App() {
           <p className="urdu-calligraphy mt-4 text-3xl leading-tight text-sindoor" dir="rtl">
             بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْم
           </p>
-          <h1 className="mt-4 font-heading text-[2.3rem] leading-tight text-sindoor text-glow bilingual-name">
+          <h1 className="royal-title mt-4 font-heading text-[2.3rem] leading-tight text-sindoor text-glow bilingual-name">
             <span className="bilingual-copy bilingual-copy-en">Riyan Khan</span>
             <span className="bilingual-copy bilingual-copy-ur urdu-calligraphy" dir="rtl">
               ریان خان
             </span>
           </h1>
+          <p className="font-body text-sm text-slate-600 bilingual-label">
+            <span className="bilingual-copy bilingual-copy-en">Son of Shafique Ahmad Khan</span>
+            <span className="bilingual-copy bilingual-copy-ur urdu-calligraphy" dir="rtl">
+              ابنِ شفیق احمد خان
+            </span>
+          </p>
           <p className="font-body text-xs tracking-[0.34em] text-amber-900/80 bilingual-label bilingual-connector">
             <span className="bilingual-copy bilingual-copy-en uppercase">weds</span>
             <span className="bilingual-copy bilingual-copy-ur urdu-calligraphy" dir="rtl">
               ولیمہ
             </span>
           </p>
-          <h1 className="mt-1 font-heading text-[2.3rem] leading-tight text-sindoor text-glow bilingual-name">
+          <h1 className="royal-title mt-1 font-heading text-[2.3rem] leading-tight text-sindoor text-glow bilingual-name">
             <span className="bilingual-copy bilingual-copy-en">Khadija Tabassum</span>
             <span className="bilingual-copy bilingual-copy-ur urdu-calligraphy" dir="rtl">
               خدیجہ تبسم
             </span>
           </h1>
-          <p className="mt-4 font-body text-sm text-slate-600">With blessings of our families</p>
+          <p className="font-body text-sm text-slate-600 bilingual-label">
+            <span className="bilingual-copy bilingual-copy-en">Daughter of Kamaluddin Azmi</span>
+            <span className="bilingual-copy bilingual-copy-ur urdu-calligraphy" dir="rtl">
+              بنتِ کمال الدین اعظمی
+            </span>
+          </p>
+          <p className="mt-4 font-body text-sm text-slate-600 bilingual-label">
+            <span className="bilingual-copy bilingual-copy-en">With blessings of our families</span>
+            <span className="bilingual-copy bilingual-copy-ur urdu-calligraphy" dir="rtl">
+              اپنے خاندانوں کی دعاؤں کے ساتھ
+            </span>
+          </p>
         </header>
 
         <section
-          className="mughal-card shimmer-frame relative mt-6 animate-rise rounded-3xl border border-amber-900/35 bg-white/88 p-5 backdrop-blur"
+          className="mughal-card regal-card shimmer-frame relative mt-6 animate-rise rounded-3xl border border-amber-900/35 bg-white/88 p-5 backdrop-blur"
           style={{ animationDelay: '240ms' }}
         >
           <p className="font-body text-[11px] tracking-[0.24em] text-peacock/80 bilingual-label">
@@ -211,7 +255,7 @@ function App() {
         </section>
 
         <section
-          className="mughal-card shimmer-frame mt-5 animate-rise rounded-3xl border border-amber-900/30 bg-gradient-to-br from-white to-amber-50 p-5"
+          className="mughal-card regal-card details-ribbon shimmer-frame mt-5 animate-rise rounded-3xl border border-amber-900/30 bg-gradient-to-br from-white to-amber-50 p-5"
           style={{ animationDelay: '340ms' }}
         >
           <p className="walima-swap walima-title font-body text-[11px] tracking-[0.24em] text-mehndi/80">
@@ -268,7 +312,7 @@ function App() {
             href="https://maps.google.com/?q=Mubarak+Hall+Mumbra"
             target="_blank"
             rel="noreferrer"
-            className="mt-4 inline-flex w-full items-center justify-center rounded-xl bg-sindoor px-4 py-3 font-body text-sm font-semibold text-white transition duration-300 hover:scale-[1.02] hover:bg-rose-700"
+            className="cta-royal mt-4 inline-flex w-full items-center justify-center rounded-xl bg-sindoor px-4 py-3 font-body text-sm font-semibold text-white transition duration-300 hover:scale-[1.02] hover:bg-rose-700"
           >
             <span className="walima-swap walima-button w-full text-center">
               <span className="walima-copy walima-copy-en uppercase">View Location</span>
@@ -282,15 +326,16 @@ function App() {
 
       {showIntro && (
         <div
-          className={`intro-overlay fixed inset-0 z-20 flex items-center justify-center bg-gradient-to-b from-amber-950 via-sindoor to-amber-900 px-6 text-center text-white ${
+          className={`intro-overlay intro-royal-sky fixed inset-0 z-20 flex items-center justify-center bg-gradient-to-b from-amber-950 via-sindoor to-amber-900 px-6 text-center text-white ${
             isOpening ? 'intro-overlay-opening' : ''
           }`}
         >
+          <div className="intro-stars" />
           <div className="intro-door intro-door-left" />
           <div className="intro-door intro-door-right" />
           <div className={`intro-burst ${isOpening ? 'intro-burst-active' : ''}`} />
           <div
-            className={`intro-card w-full max-w-sm animate-rise rounded-3xl border border-white/30 bg-white/10 px-6 py-8 backdrop-blur ${
+            className={`intro-card royal-ring w-full max-w-sm animate-rise rounded-3xl border border-white/30 bg-white/10 px-6 py-8 backdrop-blur ${
               isOpening ? 'intro-card-opening' : ''
             }`}
           >
@@ -302,7 +347,7 @@ function App() {
               type="button"
               onClick={handleOpenInvitation}
               disabled={isOpening}
-              className="mt-6 rounded-full bg-marigold px-5 py-2 font-body text-sm font-semibold text-slate-900 transition duration-300 hover:scale-[1.04] disabled:cursor-not-allowed disabled:opacity-70"
+              className="intro-open-btn mt-6 rounded-full bg-marigold px-5 py-2 font-body text-sm font-semibold text-slate-900 transition duration-300 hover:scale-[1.04] disabled:cursor-not-allowed disabled:opacity-70"
             >
               {isOpening ? 'Unveiling...' : 'Open Invitation'}
             </button>
