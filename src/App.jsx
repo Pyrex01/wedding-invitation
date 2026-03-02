@@ -184,7 +184,7 @@ function App() {
           <span className="arch-jewel arch-jewel-left" />
           <span className="arch-jewel arch-jewel-right" />
           <p className="font-body text-[11px] tracking-[0.35em] text-amber-900/80 bilingual-label">
-            <span className="bilingual-copy bilingual-copy-en uppercase">Daawat-E-Walima</span>
+            <span className="bilingual-copy bilingual-copy-en uppercase">With Grace & Blessings: Daawat-E-Walima</span>
             <span className="bilingual-copy bilingual-copy-ur urdu-calligraphy" dir="rtl">
               دعوتِ ولیمہ
             </span>
@@ -199,7 +199,7 @@ function App() {
             </span>
           </h1>
           <p className="font-body text-sm text-slate-600 bilingual-label">
-            <span className="bilingual-copy bilingual-copy-en">Son of Shafique Ahmad Khan</span>
+            <span className="bilingual-copy bilingual-copy-en">Beloved Son of Shafique Ahmad Khan</span>
             <span className="bilingual-copy bilingual-copy-ur urdu-calligraphy" dir="rtl">
               ابنِ شفیق احمد خان
             </span>
@@ -217,15 +217,23 @@ function App() {
             </span>
           </h1>
           <p className="font-body text-sm text-slate-600 bilingual-label">
-            <span className="bilingual-copy bilingual-copy-en">Daughter of Kamaluddin Azmi</span>
+            <span className="bilingual-copy bilingual-copy-en">Beloved Daughter of Kamaluddin Azmi</span>
             <span className="bilingual-copy bilingual-copy-ur urdu-calligraphy" dir="rtl">
               بنتِ کمال الدین اعظمی
             </span>
           </p>
           <p className="mt-4 font-body text-sm text-slate-600 bilingual-label">
-            <span className="bilingual-copy bilingual-copy-en">With blessings of our families</span>
+            <span className="bilingual-copy bilingual-copy-en">
+              With the prayers and blessings of our respected families
+            </span>
             <span className="bilingual-copy bilingual-copy-ur urdu-calligraphy" dir="rtl">
               اپنے خاندانوں کی دعاؤں کے ساتھ
+            </span>
+          </p>
+          <p className="mt-2 font-body text-sm text-slate-600 bilingual-label">
+            <span className="bilingual-copy bilingual-copy-en">We cordially request the honor of your gracious presence</span>
+            <span className="bilingual-copy bilingual-copy-ur urdu-calligraphy" dir="rtl">
+              آپ کی معزز تشریف آوری ہمارے لیے باعثِ سعادت ہوگی
             </span>
           </p>
         </header>
@@ -235,7 +243,7 @@ function App() {
           style={{ animationDelay: '240ms' }}
         >
           <p className="font-body text-[11px] tracking-[0.24em] text-peacock/80 bilingual-label">
-            <span className="bilingual-copy bilingual-copy-en uppercase">Personal Invitation</span>
+            <span className="bilingual-copy bilingual-copy-en uppercase">A Heartfelt Personal Invitation</span>
             <span className="bilingual-copy bilingual-copy-ur urdu-calligraphy" dir="rtl">
               ذاتی دعوت
             </span>
@@ -259,7 +267,7 @@ function App() {
           style={{ animationDelay: '340ms' }}
         >
           <p className="walima-swap walima-title font-body text-[11px] tracking-[0.24em] text-mehndi/80">
-            <span className="walima-copy walima-copy-en uppercase">Walima Details</span>
+            <span className="walima-copy walima-copy-en uppercase">Inshallah, The Walima Ceremony Will Be Held On</span>
             <span className="walima-copy walima-copy-ur urdu-calligraphy" dir="rtl">
               ولیمہ کی تفصیلات
             </span>
@@ -267,7 +275,7 @@ function App() {
           <div className="mt-4 space-y-3">
             <div className="timeline-item">
               <p className="walima-swap walima-label font-body text-xs tracking-[0.2em] text-slate-500">
-                <span className="walima-copy walima-copy-en uppercase">Date</span>
+                <span className="walima-copy walima-copy-en uppercase">Auspicious Date</span>
                 <span className="walima-copy walima-copy-ur urdu-calligraphy" dir="rtl">
                   تاریخ
                 </span>
@@ -281,7 +289,7 @@ function App() {
             </div>
             <div className="timeline-item">
               <p className="walima-swap walima-label font-body text-xs tracking-[0.2em] text-slate-500">
-                <span className="walima-copy walima-copy-en uppercase">Time</span>
+                <span className="walima-copy walima-copy-en uppercase">Timings</span>
                 <span className="walima-copy walima-copy-ur urdu-calligraphy" dir="rtl">
                   وقت
                 </span>
@@ -295,7 +303,7 @@ function App() {
             </div>
             <div className="timeline-item">
               <p className="walima-swap walima-label font-body text-xs tracking-[0.2em] text-slate-500">
-                <span className="walima-copy walima-copy-en uppercase">Venue</span>
+                <span className="walima-copy walima-copy-en uppercase">Grand Venue</span>
                 <span className="walima-copy walima-copy-ur urdu-calligraphy" dir="rtl">
                   مقام
                 </span>
@@ -315,7 +323,7 @@ function App() {
             className="cta-royal mt-4 inline-flex w-full items-center justify-center rounded-xl bg-sindoor px-4 py-3 font-body text-sm font-semibold text-white transition duration-300 hover:scale-[1.02] hover:bg-rose-700"
           >
             <span className="walima-swap walima-button w-full text-center">
-              <span className="walima-copy walima-copy-en uppercase">View Location</span>
+              <span className="walima-copy walima-copy-en uppercase">View Venue Location</span>
               <span className="walima-copy walima-copy-ur urdu-calligraphy" dir="rtl">
                 مقام دیکھیں
               </span>
@@ -342,7 +350,7 @@ function App() {
             <p className="urdu-calligraphy text-4xl leading-tight" dir="rtl">
               دعوتِ ولیمہ
             </p>
-            <h2 className="mt-4 font-heading text-3xl">You Are Invited to Dawat-e-Walima</h2>
+            <h2 className="mt-4 font-heading text-3xl">You Are Cordially Invited to Dawat-e-Walima</h2>
             <button
               type="button"
               onClick={handleOpenInvitation}
